@@ -1,0 +1,8 @@
+var fecha = Date(fechaTimestamp).toReadableFormat("dd/MM/yyyy")
+                    fecha = fecha + " " + horas[posiHora]
+
+private fun formatearFecha(fechaActual: String): Date {
+        val formatoAParsear = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
+        formatoAParsear.timeZone = TimeZone.getTimeZone("GMT-05:00")
+        return formatoAParsear.parse(fechaActual) ?: Date()
+    }
