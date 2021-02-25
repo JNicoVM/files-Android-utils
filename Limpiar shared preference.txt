@@ -1,0 +1,1 @@
+getSharedPreferences(this.getString(R.string.key_preferences), Context.MODE_PRIVATE).edit().clear().apply()

@@ -1,0 +1,21 @@
+fun evaluarMes(fecha: String): String{
+        if (fecha == "") {
+            return "noF"
+        } else {
+            when(fecha.substring(5, 7)){
+                "01" -> return "Ene"
+                "02" -> return "Feb"
+                "03" -> return "Mar"
+                "04" -> return "Abr"
+                "05" ->return "May"
+                "06" -> return "Jun"
+                "07" -> return "Jul"
+                "08" -> return "Ago"
+                "09" ->return "Sep"
+                "10" -> return "Oct"
+                "11" -> return "Nov"
+                "12" -> return "Dic"
+            }
+        }
+        return "noF"
+    }

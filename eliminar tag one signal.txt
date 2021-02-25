@@ -1,0 +1,8 @@
+private fun eliminarTagsOneSignal() {
+        OneSignal.getTags { jsonObject ->
+            val iter: Iterator<String> = jsonObject.keys()
+            while (iter.hasNext()) {
+                OneSignal.deleteTag(iter.next())
+            }
+        }
+    }

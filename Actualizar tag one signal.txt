@@ -1,0 +1,17 @@
+private fun actualizarTagsOrganizaciones() {
+        database.collection("organizacionesXagricultor")
+            .whereEqualTo(
+                "cedula",
+                viewModel.modeloInfoGeneralAgricultor.value?.agricultor?.DocumentNumber
+            )
+            .get()
+            .addOnSuccessListener { query ->
+                query.documents.forEach {
+                    val orgXAgri =
+                        it.toObject(ModeloOrganizacionXAgricultor::class.java) as ModeloOrganizacionXAgricultor
+                    if (orgXAgri.estadoAfiliacion == "P" || orgXAgri.estadoAfiliacion == "A") {
+                        OneSignal.sendTag("organizacion_${orgXAgri.idOrgGeneral}", "true")
+                    }
+                }
+            }
+    }
